@@ -69,14 +69,14 @@ const galleryList = document.querySelector('.js-gallery');
 function createMarkup(objImg) {
   return objImg
     .map(
-      image =>
+      ({ original, preview, description }) =>
         `<li class="gallery-item">
-  <a class="gallery-link" href="${image.original}">
+  <a class="gallery-link" href="${original}">
     <img
       class="gallery-image"
-      src="${image.preview}"
-      data-source="${image.original}"
-      alt="${image.description}"
+      src="${preview}"
+      data-source="${original}"
+      alt="${description}"
     />
   </a>
 </li>`
